@@ -44,3 +44,7 @@ model = models.Sequential([
 model.compile(optimizer='adam',
               loss='categorical_crossentropy',
               metrics=['accuracy'])
+
+model.fit(train_generator, epochs=10, validation_data=val_generator)
+
+model.save('asl_model.h5')
